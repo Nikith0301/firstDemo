@@ -2,14 +2,20 @@ import { Component,ViewChild ,AfterViewInit, ViewChildren} from '@angular/core';
 import {  RouterOutlet ,RouterLink, RouterLinkActive} from '@angular/router';
 import { TestPipe } from './test.pipe';
 import { HeaderComponent } from './header/header.component'; 
+import { ArtistsComponent } from './artists/artists.component';
 import { FormsModule } from '@angular/forms';
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+// import { HttpClientModule } from  '@angular/common/http';
+import { bootstrapApplication } from '@angular/platform-browser';
 
-import axios from 'axios';
+
+// import axios from 'axios';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink, RouterLinkActive,TestPipe,FormsModule,HeaderComponent],
+  imports: [RouterOutlet,RouterLink, RouterLinkActive,TestPipe,FormsModule,HeaderComponent,ArtistsComponent],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -102,3 +108,6 @@ console.log(this.person)
 
 }
 
+// bootstrapApplication(AppComponent, {
+//   providers: [provideHttpClient()]  // Use providers here for standalone components
+// });
